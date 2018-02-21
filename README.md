@@ -37,6 +37,6 @@ The output will be the number of unique patients from the input given. <br />
 
 # AUTHOR:
 	Amey Muley
-  Biotechnology Undergrauate at IIT Guwahati
+  	Biotechnology Undergrauate at IIT Guwahati
 
 	
