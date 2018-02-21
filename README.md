@@ -22,7 +22,24 @@ the code has been created.
 $ sudo apt-get update
 $ sudo apt-get install python3.6
 ```
+fuzzy wuzzy installation:
+Using PIP via PyPI
 
+pip install fuzzywuzzy
+or the following to install python-Levenshtein too
+
+pip install fuzzywuzzy[speedup]
+Using PIP via Github
+
+pip install git+git://github.com/seatgeek/fuzzywuzzy.git@0.16.0#egg=fuzzywuzzy
+Adding to your requirements.txt file (run pip install -r requirements.txt afterwards)
+
+git+ssh://git@github.com/seatgeek/fuzzywuzzy.git@0.16.0#egg=fuzzywuzzy
+Manually via GIT
+
+git clone git://github.com/seatgeek/fuzzywuzzy.git fuzzywuzzy
+cd fuzzywuzzy
+python setup.py install
 
 # RUNNING THE CODE:
 code can be run from linux terminal with command 
