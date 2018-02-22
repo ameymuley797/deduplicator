@@ -49,7 +49,7 @@ while flag:
         F_labels[i]=-1
     for i in range(len(dtset1)):
         for j in range(len(dtset1)):
-            F_fn_C=(max((dtset1[i]['fn'].str.len()),(dtset1[j]['fn'].str.len())))*(1-fuzz.ratio(dtset1[i]['fn'],dtset1[j]['fn'])/100)#cost of first name  of every pair
+            F_fn_C=(max((dtset1[i]['fn'].str.len()),(dtset1[j]['fn'].str.len())))*(1-fuzz.ratio(dtset1[i]['fn'],dtset1[j]['fn'])/100)
             F_ln_C=(max((dtset1[i]['ln'].str.len()),(dtset1[j]['ln'].str.len())))*(1-fuzz.ratio(dtset1[i]['ln'],dtset1[j]['ln'])/100)
             F_dobC=(dtset1[i]['dob']!=dtset1[j]['dob'])*dobW
             if(F_fn_C+F_ln_C+F_dobC<threshold): 
