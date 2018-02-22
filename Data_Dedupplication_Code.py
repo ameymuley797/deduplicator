@@ -35,6 +35,10 @@ print("Training of Dataframe containing female patients starts........\n")
 F_UniqueNameCount=extdata.F_UniqueNameCount
 F_Dist=math.inf
 F_threshold=-0.5
+dtset1=dtset1.reset_index(drop=True)
+dtset2=dtset2.reset_index(drop=True)
+dtset1_test=dtset1_test.reset_index(drop=True)
+dtset2_test=dtset2_test.reset_index(drop=True)
 while flag:
     F_threshold+=0.5
     F_count=0
@@ -74,7 +78,7 @@ while flag:
         if F_count<=frows[1]:
             F_uniqueNms.append(dset1[rows[0]])
             F_count=frows[1]+1
-    if F_Dist> abs(len(F_uniqueNms)-F_UniqueNameCount):#deciding how long the loop should run if no development in the optimum threshold break
+    if F_Dist> abs(len(F_uniqueNms)-F_UniqueNameCount):
         F_Dist=abs(len(F_uniqueNms)-F_UniqueNameCount)
         FOptValThreshold=F_threshold
         flag=1
@@ -253,6 +257,7 @@ for i in range(len(M_uniqueNms)):
 #--------------------------------------male output came---------------------------
 frames=[F_output,M_output]
 dedupe_output=pd.concat(frames)
+dedupe_output=dedupe_output.reset_index(drop=True)
 dedupe_output.to_csv('output.csv', sep='\t', encoding='utf-8')
 print("Unique data: ", M_UniqueNms+F_UniqueNms)
 print("Output has been saved  as ", extdata.output, ".")
